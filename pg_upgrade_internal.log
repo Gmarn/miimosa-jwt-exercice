@@ -1,6 +1,0 @@
-
------------------------------------------------------------------
-  pg_upgrade run on Fri Mar 12 15:05:25 2021
------------------------------------------------------------------
-
-could not open version file "/usr/local/var/postgres.old/PG_VERSION": No such file or directory
