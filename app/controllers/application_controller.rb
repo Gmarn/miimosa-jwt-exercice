@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
   # We are handling error directly in the Application Controller, could be good to have an
   # error handler in /app/controllers/concerns/error_helper.rb
-  rescue_from JWT::VerificationError do |error|
+  rescue_from JWT::DecodeError do |error|
     render_error(error.message, :unauthorized)
   end
 

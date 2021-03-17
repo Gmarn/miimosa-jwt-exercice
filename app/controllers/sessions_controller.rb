@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    # In any case invalid uuid or invalid body request endpoint will responde 404. TODO: bettered
     validate_params(:user_id)
     token = JwtHandler.new.create(user.uuid)
     render json: { token: token }, status: 200
