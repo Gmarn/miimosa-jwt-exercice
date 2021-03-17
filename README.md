@@ -30,7 +30,7 @@ Run in the terminal after installing bunlder gem:
 
 ```
   bundle install
-  bundle exec rake db:create db:migrate
+  bundle exec rake db:create db:migrate db:seed
 ```
 
 ### Running with docker
