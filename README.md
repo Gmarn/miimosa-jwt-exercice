@@ -19,7 +19,7 @@ On MacOS:
 
 Log out from postgres
 
-### Project set up
+### Project set up on local
 
 Ruby version:
 ```bash
@@ -34,6 +34,24 @@ Run in the terminal after installing bunlder gem:
 ```
 
 ### Running with docker
+
+We have a DOCKERFILE for the rails application and a docker-compose to handle a docker image
+with the rails app and the postgres database.
+
+To build the image and run it:
+```bash
+docker-compose -f docker-compose.yml up --build
+```
+
+After that we need to create databse and populate it:
+```bash
+docker-compose run web rails db:create db:migrate db:seed
+```
+
+Now we can launch newly the services:
+```bash
+docker-compose up
+```
 
 ### Run linter
 

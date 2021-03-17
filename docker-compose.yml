@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+    web:
+        build: .
+        image: rails-docker
+        restart: "no"
+        environment:
+            - DB_HOST=postgresql
+            - DB_USERNAME=postgres
+            - DB_PASSWORD=password
+            - DB_PORT=5432
+        ports:
+            - 3000:3000
+        depends_on:
+            - postgresql
+
+    postgresql:
+        image: postgres
+        restart: "no"
+        ports:
+            - 5432:5432
+        environment:
+            POSTGRES_DB: docker_rails_development
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: password
+        volumes:
+            - postgresdb:/var/lib/postgresql/data/
+
+volumes:
+    postgresdb:
