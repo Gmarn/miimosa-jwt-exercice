@@ -55,8 +55,20 @@ docker-compose up
 
 ### Run linter
 
-We are using rubocop. We run rubocop on `app` directory
+We are using rubocop. We run rubocop on `app` and `spec` directory
 
 ```bash
-bundle exec rubocop app
+bundle exec rubocop app spec
+```
+
+### Run test
+
+We are using RSpec, before we need to create database for testing enviroment:
+
+```bash
+bundle exec rake db:create db:migrate RAILS_ENV=test
+```
+
+```bash
+bundle exec rspec
 ```

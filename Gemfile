@@ -24,6 +24,7 @@ group :development, :test do
   # Rubocop: linter
   gem 'rubocop', '~> 1.7'
   gem 'rubocop-rails', '~> 2.9'
+  gem 'rubocop-rspec', '~> 2.2'
 end
 
 group :development do
